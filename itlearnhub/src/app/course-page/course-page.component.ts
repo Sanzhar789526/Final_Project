@@ -29,6 +29,7 @@ interface Course {
   templateUrl: './course-page.component.html',
   styleUrl: './course-page.component.css'
 })
+
 export class CoursePageComponent implements OnInit {
   course: Course = {
     title: 'Introduction to Data Science',
