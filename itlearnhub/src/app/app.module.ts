@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { ReactiveFormsModule } from '@angular/forms'; // Импорт ReactiveFormsModule
+import { ReactiveFormsModule, FormsModule } from '@angular/forms'; // Импорт ReactiveFormsModule и FormsModule
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CourseCatalogComponent } from './course-catalog/course-catalog.component';
@@ -13,10 +13,11 @@ import { StudentCourseComponent } from './student-course/student-course.componen
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
 import { LessonManagementComponent } from './lesson-management/lesson-management.component';
 import { InteractiveModuleComponent } from './interactive-module/interactive-module.component';
+import { HttpClientModule } from '@angular/common/http';
 import { CommunicationComponent } from './communication/communication.component';
 
+import { RegisterComponent } from './register/register.component'; // Импорт компонента регистрации
 import { SafeUrlPipe } from './safe-url.pipe';
-
 
 @NgModule({
   declarations: [
@@ -31,16 +32,20 @@ import { SafeUrlPipe } from './safe-url.pipe';
     LessonManagementComponent,
     InteractiveModuleComponent,
     CommunicationComponent,
-
-    SafeUrlPipe
+    SafeUrlPipe,
   ],
   imports: [
     BrowserModule,
     RouterModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule, // Добавьте сюда
+    HttpClientModule,
+    RegisterComponent,
+  
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
